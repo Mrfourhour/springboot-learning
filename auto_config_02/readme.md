@@ -11,7 +11,7 @@ public class AutoConfig02Application {
 ```
 
 
-##1. @SpringBootApplication 标志这是一个springboot应用,点进去会发现这是一个组合注解
+## 1. @SpringBootApplication 标志这是一个springboot应用,点进去会发现这是一个组合注解
  ```java
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
@@ -31,7 +31,7 @@ public class AutoConfig02Application {
 public @interface SpringBootApplication {}
 ```
 ## 1.1 @SpringBootConfiguration springboot 配置类,底层是spring的@Configuration（spring的配置类），也是一个组件@Component
- ```java
+```java
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
@@ -63,8 +63,8 @@ public @interface Configuration {
 @Import({AutoConfigurationImportSelector.class})
 public @interface EnableAutoConfiguration {}
 ```
-##1.2.1 @AutoConfigurationPackage 自动配置包,@Import({Registrar.class})导入组件由Registrara.class决定，**将主配置类的所在包及下面的所有子包里面的所有组件都扫描到spring容器中**
-  ```java
+## 1.2.1 @AutoConfigurationPackage 自动配置包,@Import({Registrar.class})导入组件由Registrara.class决定，**将主配置类的所在包及下面的所有子包里面的所有组件都扫描到spring容器中**
+```java
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
@@ -90,8 +90,8 @@ static class Registrar implements ImportBeanDefinitionRegistrar, DeterminableImp
     }
 }
 ```
-现在包扫描路径获取到了，那具体加载哪些组件呢，看看下面这个注解。
-##1.2.2@Import({AutoConfigurationImportSelector.class})  
+## 1.2.2 现在包扫描路径获取到了，那具体加载哪些组件呢，看看下面这个注解。
+@Import({AutoConfigurationImportSelector.class})  
 @Import注解就是给Spring容器中导入一些组件，这里传入了一个组件的选择器:AutoConfigurationImportSelector。
 ```java
 public class AutoConfigurationImportSelector implements DeferredImportSelector, BeanClassLoaderAware, ResourceLoaderAware, BeanFactoryAware, EnvironmentAware, Ordered {
