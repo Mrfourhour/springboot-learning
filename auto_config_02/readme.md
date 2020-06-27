@@ -1,6 +1,6 @@
-# springboot自动配置
+ springboot自动配置
 
-# 主程序类
+ 主程序类
 ```java
 @SpringBootApplication
 public class AutoConfig02Application {
