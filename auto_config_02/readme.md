@@ -11,7 +11,7 @@ public class AutoConfig02Application {
 ```
 
 
- ##1. @SpringBootApplication 标志这是一个springboot应用,点进去会发现这是一个组合注解
+##1. @SpringBootApplication 标志这是一个springboot应用,点进去会发现这是一个组合注解
  ```java
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
@@ -30,7 +30,7 @@ public class AutoConfig02Application {
 )
 public @interface SpringBootApplication {}
 ```
- ## 1.1 @SpringBootConfiguration springboot 配置类,底层是spring的@Configuration（spring的配置类），也是一个组件@Component
+## 1.1 @SpringBootConfiguration springboot 配置类,底层是spring的@Configuration（spring的配置类），也是一个组件@Component
  ```java
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
@@ -53,7 +53,7 @@ public @interface Configuration {
     boolean proxyBeanMethods() default true;
 }
 ```
-  ## 1.2 @EnableAutoConfiguration 开启自动配置,组合注解
+## 1.2 @EnableAutoConfiguration 开启自动配置,组合注解
 ```java
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
@@ -63,7 +63,7 @@ public @interface Configuration {
 @Import({AutoConfigurationImportSelector.class})
 public @interface EnableAutoConfiguration {}
 ```
-  ##1.2.1 @AutoConfigurationPackage 自动配置包,@Import({Registrar.class})导入组件由Registrara.class决定，**将主配置类的所在包及下面的所有子包里面的所有组件都扫描到spring容器中**
+##1.2.1 @AutoConfigurationPackage 自动配置包,@Import({Registrar.class})导入组件由Registrara.class决定，**将主配置类的所在包及下面的所有子包里面的所有组件都扫描到spring容器中**
   ```java
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
