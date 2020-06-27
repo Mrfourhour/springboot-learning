@@ -55,3 +55,6 @@ public class TestController {
 }
 ```
     启动应用，访问对应的路径即可获取到 hello springboot，，，测试通过
+## 4.将springboot应用打包成可运行的jar
+ 通过maven插件的lifecycle 下面的package可以将spring boot项目打包成可执行的jar文件，
+ 并且可以直接通过   ‘Java -jar jar包名’  来执行
