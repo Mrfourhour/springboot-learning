@@ -1,4 +1,4 @@
-# 关于多配置文件的切换
+# 关于多配置文件的使用
 
 ## 1. springboot的默认配置文件
    新建一个springboot项目，在类路径下会自动生成一个application.properties 文件  
